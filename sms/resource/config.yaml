@@ -1,0 +1,15 @@
+# 腾讯云短信 Short Message Service
+tencentSms:
+  secretID: xxx
+  secretKey: xxx
+  sdkAppID: xxx
+  sign: xxx
+  templateID: xxx
+
+# 火山引擎短信 Short Message Service
+volcSms:
+  accessKey: xxx
+  secretKey: xxx
+  smsAccount: xxx
+  sign: xxx
+  templateID: xxx
