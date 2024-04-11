@@ -3,6 +3,8 @@ package sms
 import (
 	"encoding/json"
 
+	"github.com/pppbc/components/errors"
+
 	"github.com/sirupsen/logrus"
 	"github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common"
 	txErrors "github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common/errors"
@@ -102,7 +104,7 @@ func (s *TencentSmsClient) Send(mobile string, code string) (err error) {
 	// 处理异常
 	if _, ok := err.(*txErrors.TencentCloudSDKError); ok {
 		logrus.Error("sendSms TencentCloudSDKError", err)
-		return
+		return errors.New(500, "三方服务异常")
 	}
 	// 非SDK异常，直接失败。实际代码中可以加入其他的处理。
 	if err != nil {
