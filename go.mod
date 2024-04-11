@@ -1,4 +1,4 @@
-module components
+module github.com/pppbc/components
 
 go 1.17
 
